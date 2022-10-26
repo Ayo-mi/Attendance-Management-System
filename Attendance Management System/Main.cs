@@ -137,7 +137,7 @@ namespace Attendance_Management_System
             attr.Add("@pw", pw);
             DBConnection dB = new DBConnection();
             MySqlDataReader data = (MySqlDataReader)dB.Select(stmt, attr);
-            if (data.Read())
+            if (data !=null && data.Read())
             {
                 e.Result = true;                
             }

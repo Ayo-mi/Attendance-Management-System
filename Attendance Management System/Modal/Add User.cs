@@ -65,7 +65,7 @@ namespace Attendance_Management_System.Modal
 
         private void bunifuButton22_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(fName.Text) && String.IsNullOrEmpty(lName.Text) && String.IsNullOrEmpty(userid.Text) && String.IsNullOrEmpty(psw.Text) && psw.Text.Length >5 && enrollment.Enrollerr.TemplateStatus == DPFP.Processing.Enrollment.Status.Ready) 
+            if(!String.IsNullOrEmpty(fName.Text) && !String.IsNullOrEmpty(lName.Text) && !String.IsNullOrEmpty(userid.Text) && !String.IsNullOrEmpty(psw.Text) && psw.Text.Length >5 && enrollment.Enrollerr.TemplateStatus == DPFP.Processing.Enrollment.Status.Ready) 
             {
                 DBConnection dB = new DBConnection();
                 String fir = fName.Text.Trim();

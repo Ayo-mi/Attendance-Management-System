@@ -26,7 +26,7 @@ namespace Attendance_Management_System
             String stmt = String.Format("SELECT a.time_in, a.time_out, a.schedule_timein, a.schedule_timeout, " +
                 "e.first_name, e.last_name FROM attendance_record a left join employees e on a.employee_id = e.employee_id" +
                 " where (e.employee_id like '%{0}%' or e.first_name like '%{0}%' or e.last_name like '%{0}%' or " +
-                "a.position_name like '%{0}%' or a.schedule_name like '%{0}%');", qry);
+                "a.position_name like '%{0}%' or a.schedule_name like '%{0}%') order by a.id desc;", qry);
             Hashtable attr = new Hashtable();
             
             tb.Rows.Clear();
@@ -115,7 +115,7 @@ namespace Attendance_Management_System
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             String stmt = "SELECT a.time_in, a.time_out, a.schedule_timein, a.schedule_timeout, " +
-                "e.first_name, e.last_name FROM attendance_record a left join employees e on a.employee_id = e.employee_id";
+                "e.first_name, e.last_name FROM attendance_record a left join employees e on a.employee_id = e.employee_id order by a.id DESC";
             Hashtable attr = new Hashtable();
             this.Invoke(new MethodInvoker(delegate
             {
